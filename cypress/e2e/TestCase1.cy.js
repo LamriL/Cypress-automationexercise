@@ -1,6 +1,5 @@
 describe("Automation Exercise", () => {             
 
-
   it('Forms', () => {
       
       //2. Navigate to url 'http://automationexercise.com'
@@ -17,7 +16,7 @@ describe("Automation Exercise", () => {
 
       //6. Enter name and email address
       cy.get('[data-qa="signup-name"]').type('Lamri')
-      cy.get('[data-qa="signup-email"]').type('lamrinx2@msn.com')
+      cy.get('[data-qa="signup-email"]').type('lamrinx@msn.com')
 
       //7. Click 'Signup' button
       cy.get('form[action="/signup"]').submit()
@@ -57,14 +56,18 @@ describe("Automation Exercise", () => {
       cy.get('h2 b').contains('Account Created!').should('be.visible')
 
       //15. Click 'Continue' button
+      cy.get('a[data-qa="continue-button"]').click()
 
       //16. Verify that 'Logged in as username' is visible
+      cy.get('ul[class="nav navbar-nav"] li a').contains('Logged in as').should('be.visible')
+        cy.get('ul[class="nav navbar-nav"] li a b').contains('Lamri').should('be.visible')
 
       //17. Click 'Delete Account' button
+      cy.get('a[href="/delete_account"]').click()
 
       //18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
-
-      
+      cy.get('h2 b').contains('Account Deleted!').should('be.visible')
+      cy.get('a[data-qa="continue-button"]').click()
       
   })
 

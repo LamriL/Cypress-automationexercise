@@ -1,6 +1,6 @@
-describe("Automation Exercise", () => {             
+describe("Test Case 1: Register User", () => {             
 
-  it('Forms', () => {
+  it('Register User', () => {
       
       //2. Navigate to url 'http://automationexercise.com'
       cy.visit('https://automationexercise.com/')
@@ -51,7 +51,6 @@ describe("Automation Exercise", () => {
       //13. Click 'Create Account button'
       cy.get('form[action="/signup"]').submit()
 
-
       //14. Verify that 'ACCOUNT CREATED!' is visible
       cy.get('h2 b').contains('Account Created!').should('be.visible')
 
@@ -60,7 +59,7 @@ describe("Automation Exercise", () => {
 
       //16. Verify that 'Logged in as username' is visible
       cy.get('ul[class="nav navbar-nav"] li a').contains('Logged in as').should('be.visible')
-        cy.get('ul[class="nav navbar-nav"] li a b').contains('Lamri').should('be.visible')
+      cy.get('ul[class="nav navbar-nav"] li a b').contains('Lamri').should('be.visible')
 
       //17. Click 'Delete Account' button
       cy.get('a[href="/delete_account"]').click()
@@ -70,9 +69,5 @@ describe("Automation Exercise", () => {
       cy.get('a[data-qa="continue-button"]').click()
       
   })
-
-after(() => {
- 
-})
 
 })

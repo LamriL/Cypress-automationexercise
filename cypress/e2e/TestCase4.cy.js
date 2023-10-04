@@ -1,6 +1,6 @@
-describe("Test Case 2: Login User with correct email and password", () => {             
+describe("Test Case 4: Logout User", () => {             
 
-  it('Login User', () => {
+  it('Logout User', () => {
       
     //2. Navigate to url 'http://automationexercise.com'
     cy.visit('https://automationexercise.com/')
@@ -25,11 +25,12 @@ describe("Test Case 2: Login User with correct email and password", () => {
     cy.get('ul[class="nav navbar-nav"] li a').contains('Logged in as').should('be.visible')
     cy.get('ul[class="nav navbar-nav"] li a b').contains('Lamri').should('be.visible')
 
-    //9. Click 'Delete Account' button
-    cy.get('a[href="/delete_account"]').click()
+    //9. Click 'Logout' button
+    cy.get('a[href="/logout"]').click()
 
-    //10. Verify that 'ACCOUNT DELETED!' is visible
-    cy.get('h2 b').contains('Account Deleted!').should('be.visible')
+    //10. Verify that user is navigated to login page 
+    cy.get('h2').contains('Login to your account').should('be.visible') 
+    
   })
 
 })

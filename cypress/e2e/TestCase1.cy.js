@@ -17,7 +17,7 @@ describe("Automation Exercise", () => {
 
       //6. Enter name and email address
       cy.get('[data-qa="signup-name"]').type('Lamri')
-      cy.get('[data-qa="signup-email"]').type('lamrinx1@msn.com')
+      cy.get('[data-qa="signup-email"]').type('lamrinx2@msn.com')
 
       //7. Click 'Signup' button
       cy.get('form[action="/signup"]').submit()

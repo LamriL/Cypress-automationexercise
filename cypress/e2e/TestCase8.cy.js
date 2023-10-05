@@ -23,9 +23,10 @@ describe("Test Case 8: Verify All Products and product detail page", () => {
     cy.get('.choose').first().click()
 
     //8. User is landed to product detail page
-    
     //9. Verify that detail detail is visible: product name, category, price, availability, condition, brand
-
+    cy.get('.product-information h2').should('be.visible')
+    cy.get('.product-information p').contains('Category:').should('be.visible')
+    
   })
 
 })
